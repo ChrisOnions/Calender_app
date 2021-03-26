@@ -8,24 +8,35 @@ function displayTime() {
 }
 
 function codeBlock (){
-codeBlockContainer
+
+
+$(".container").append( "<p>Test</p>" );
 } 
 
+// Create all the elements 
+  // Time
+  // . row Form for input
+  // Button to save
+  // w/lock symbol
+  // .hour =  what hour it is in the first columb
+  // .row styling on the middle element 
+    // and color chages made in diferent funtion that ticks every min
+  // .savebtn is the last element in the row
 
+ 
+// function to change the color of the times that have passed
+  // check current time if 
+    // if time has passed .past
+    // else time is now .present 
+    // if time is to come .future
+  // and a way to update them 
+
+// when an event has been added
+  //and the save button has been clicked
+    //save the event to local storage in a string of objects
+
+
+
+codeBlock();
 setInterval(displayTime, 1000);
 
-// GIVEN I am using a daily planner to create a schedule
-// WHEN I open the planner
-// THEN the current day is displayed at the top of the calendar
-// WHEN I scroll down
-
-// THEN I am presentled with timeblocks for standard business hours
-// WHEN I view the timeblocks for that day
-
-// THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-// WHEN I click into a timeblock
-// THEN I can enter an event
-// WHEN I click the save button for that timeblock
-// THEN the text for that event is saved in local storage
-// WHEN I refresh the page
-// THEN the saved events persist
