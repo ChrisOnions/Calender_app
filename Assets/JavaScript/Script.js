@@ -1,17 +1,46 @@
 var currentDayEl = $("#currentDayDisplay");
 var codeBlockContainer = $(".container");
 
+var CurrentTime = moment();
 
 function displayTime() {
   var rightNow = moment().format('LLLL' );
   currentDayEl.text(rightNow);
 }
 
+
 function codeBlock (){
 
 
-$(".container").append( "<p>Test</p>" );
-} 
+  for (var i = 0; i < 15; i++) {
+
+  var TimeArea = document.createElement("p");
+  var userInputBlock = document.createElement("textarea");
+  var lockAndKey = document.createElement("button");
+  var elementBlock = document.createElement("Div")
+
+  $(TimeArea).addClass("hour col-md-2").text(moment('7:00 AM', 'hh:mm A').add(i, 'hours').format('hA'));
+  $(userInputBlock).addClass("col-md-9 textarea ").text("Text content");
+  $(lockAndKey).addClass("saveBtn col-md-1").text(":lock:");
+  $(elementBlock).addClass("row text-area");
+
+  codeBlockContainer.append(elementBlock)
+  elementBlock.append(TimeArea);
+  elementBlock.append(userInputBlock);
+  elementBlock.append(lockAndKey);
+
+  if (CurrentTime.isSame(moment('7:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
+    $(userInputBlock).addClass('present')
+//if the time is in the future, display green
+} else if (CurrentTime.isBefore(moment('9:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
+    $(userInputBlock).addClass('future')
+//if the time is in the past, display grey
+} else if (CurrentTime.isAfter(moment('9:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
+    $(userInputBlock).addClass('past')
+
+}
+  };
+}
 
 // Create all the elements 
   // Time
