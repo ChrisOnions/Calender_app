@@ -22,7 +22,9 @@ function codeBlock (){
   $(TimeArea).addClass("hour col-md-2").text(moment('7:00 AM', 'hh:mm A').add(i, 'hours').format('hA'));
   $(userInputBlock).addClass("col-md-9 textarea ").attr("placeholder", "Insert Text Here");
   $(lockAndKey).addClass("saveBtn col-md-1").text(":lock:");
-  $(elementBlock).addClass("row text-area");
+  $(elementBlock).addClass("row text-area"); 
+  
+ 
 
   codeBlockContainer.append(elementBlock)
   //Append all elements in order
@@ -44,9 +46,10 @@ function codeBlock (){
 };
 }
 $(".saveBtn").click(function() {
-  console.log("Handler for .click() called.");
-  localStorage.setItem($(".hour").attr('data-time'), $("").siblings('textarea').val())
-});
+ 
+  localStorage.setItem( $("saveBtn").siblings("hour").text(""), $("saveBtn").siblings('textarea').val(""))
+})
+
 
 
 // Create all the elements 
