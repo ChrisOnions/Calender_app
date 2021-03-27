@@ -20,27 +20,34 @@ function codeBlock (){
   var elementBlock = document.createElement("Div")
 
   $(TimeArea).addClass("hour col-md-2").text(moment('7:00 AM', 'hh:mm A').add(i, 'hours').format('hA'));
-  $(userInputBlock).addClass("col-md-9 textarea ").text("Text content");
+  $(userInputBlock).addClass("col-md-9 textarea ").attr("placeholder", "Insert Text Here");
   $(lockAndKey).addClass("saveBtn col-md-1").text(":lock:");
   $(elementBlock).addClass("row text-area");
 
   codeBlockContainer.append(elementBlock)
+  //Append all elements in order
   elementBlock.append(TimeArea);
   elementBlock.append(userInputBlock);
   elementBlock.append(lockAndKey);
-
+//if time is current
   if (CurrentTime.isSame(moment('7:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
     $(userInputBlock).addClass('present')
-//if the time is in the future, display green
+//if the time is in the future
 } else if (CurrentTime.isBefore(moment('9:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
     $(userInputBlock).addClass('future')
-//if the time is in the past, display grey
+//if the time is in the past
 } else if (CurrentTime.isAfter(moment('9:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
     $(userInputBlock).addClass('past')
+    }
 
+ 
+};
 }
-  };
-}
+$(".saveBtn").click(function() {
+  console.log("Handler for .click() called.");
+  localStorage.setItem($(".hour").attr('data-time'), $("").siblings('textarea').val())
+});
+
 
 // Create all the elements 
   // Time
