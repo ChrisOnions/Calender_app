@@ -33,10 +33,10 @@ function codeBlock (){
   if (CurrentTime.isSame(moment('7:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
     $(userInputBlock).addClass('present')
 //if the time is in the future
-} else if (CurrentTime.isBefore(moment('9:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
+} else if (CurrentTime.isBefore(moment('7:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
     $(userInputBlock).addClass('future')
 //if the time is in the past
-} else if (CurrentTime.isAfter(moment('9:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
+} else if (CurrentTime.isAfter(moment('7:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
     $(userInputBlock).addClass('past')
     }
 
