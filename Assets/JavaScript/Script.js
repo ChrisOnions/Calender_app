@@ -2,17 +2,15 @@ var currentDayEl = $("#currentDayDisplay");
 var codeBlockContainer = $(".container");
 
 var CurrentTime = moment();
+var storedVariables = CurrentTime.format("YYYY-MM-DD");
+var arrayOfInputVars = [{}];
 
 function displayTime() {
   var rightNow = moment().format('LLLL' );
   currentDayEl.text(rightNow);
 }
 
-
-function codeBlock (){
-
-
-  for (var i = 0; i < 15; i++) {
+for (var i = 0; i < 15; i++) {
 
   var TimeArea = document.createElement("p");
   var userInputBlock = document.createElement("textarea");
@@ -24,31 +22,36 @@ function codeBlock (){
   $(lockAndKey).addClass("saveBtn col-md-1").text(":lock:");
   $(elementBlock).addClass("row text-area"); 
   
- 
-
   codeBlockContainer.append(elementBlock)
   //Append all elements in order
   elementBlock.append(TimeArea);
   elementBlock.append(userInputBlock);
   elementBlock.append(lockAndKey);
-//if time is current
+  //if time is current
   if (CurrentTime.isSame(moment('7:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
     $(userInputBlock).addClass('present')
-//if the time is in the future
-} else if (CurrentTime.isBefore(moment('7:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
+  //if the time is in the future
+  } else if (CurrentTime.isBefore(moment('7:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
     $(userInputBlock).addClass('future')
-//if the time is in the past
-} else if (CurrentTime.isAfter(moment('7:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
+  //if the time is in the past
+  } else if (CurrentTime.isAfter(moment('7:00 AM', 'hh:mm A').add(i, 'hours'), 'hour')) {
     $(userInputBlock).addClass('past')
     }
+  };
 
- 
-};
+  // Store the Variables that have been entered in array
+
+// For loop to get and display tasks from local storage
+hourArr = $('.hour').toArray()
+for (i = 0; i < hourArr.length; i++) {
+    $(hourArr[i]).siblings('textarea').text(localStorage.getItem($("textarea").val()))
 }
-$(".saveBtn").click(function() {
- 
-  localStorage.setItem( $("saveBtn").siblings("hour").text(""), $("saveBtn").siblings('textarea').val(""))
-})
+// console.log(hourArr)
+
+$(".saveBtn").click(function(Event) {
+
+  var textBoxDisplay = $(event.target).prev("textarea").val()
+});
 
 
 
@@ -76,6 +79,6 @@ $(".saveBtn").click(function() {
 
 
 
-codeBlock();
+
 setInterval(displayTime, 1000);
 
