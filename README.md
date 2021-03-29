@@ -17,7 +17,8 @@
 
 ## Aim :
 
-This project was Bootcamp Challenge to design a calender app that stores your events using local storage
+This project was Bootcamp Challenge to design a calender app that stores your events using local storage. the base code was supplied and i have written all javascript myself.
+
 
 ## Prerequisites :
 
@@ -31,6 +32,6 @@ Please use google Chrome for optimum results
 
 
 ## Pictures :
-![404 image missing](./assets/Pics/titleScreen.JPG "Optional Title")
-![404 image missing](./assets/Pics/gamePlay.JPG "Optional Title")
-![404 image missing](./assets/Pics/scoreScreen.JPG "Optional Title")
+![404 image missing](./assets/Pics/timeblock.jpg "Working product")
+![404 image missing](./assets/Pics/05-third-party-apis-homework-demo.gif "example gif i worked to")
+
