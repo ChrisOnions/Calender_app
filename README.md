@@ -33,6 +33,6 @@ Please use google Chrome for optimum results
 
 
 ## Pictures :
-![404 image missing](./assets/Pics/timeblock.jpg "Working product")
+![404 image missing](./assets/Pics/timeblock.JPG "Working product")
 ![404 image missing](./assets/Pics/05-third-party-apis-homework-demo.gif "example gif i worked to")
 
